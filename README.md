@@ -8,3 +8,47 @@ The platform consists of a central Ubuntu Server hosting the Wazuh platform and 
 
 This project demonstrates practical SOC analyst skills including SIEM deployment, detection engineering, log analysis, threat hunting, MITRE ATT&CK mapping, dashboard creation, and incident response validation. It is designed as a portfolio project to showcase end-to-end SOC operations using industry-standard tools.
 
+# Architecture
+
+```mermaid
+flowchart LR
+
+    subgraph Attacker["🛡️ Attack Simulation"]
+        KALI["💻 Kali Linux<br/>Atomic Red Team<br/>Manual Attack Simulation"]
+    end
+
+    subgraph Endpoints["🖥️ Monitored Endpoints"]
+        WIN["🪟 Windows 10<br/>Sysmon<br/>Wazuh Agent"]
+        LINUX["🐧 Ubuntu Desktop<br/>Auditd<br/>Wazuh Agent"]
+    end
+
+    subgraph SOC["🛡️ SOC Server (Ubuntu Server)"]
+        WAZUH["Wazuh Manager"]
+        INDEXER["Wazuh Indexer"]
+        DASHBOARD["Wazuh Dashboard"]
+    end
+
+    subgraph Detection["🔍 Detection Engineering"]
+        SIGMA["Sigma Rules"]
+        MITRE["MITRE ATT&CK Mapping"]
+    end
+
+    subgraph Analyst["👨‍💻 SOC Analyst"]
+        USER["Browser"]
+    end
+
+    KALI -->|Simulated Attacks| WIN
+    KALI -->|Simulated Attacks| LINUX
+
+    WIN -->|Security Events| WAZUH
+    LINUX -->|Security Events| WAZUH
+
+    SIGMA --> WAZUH
+
+    WAZUH --> INDEXER
+    INDEXER --> DASHBOARD
+
+    WAZUH --> MITRE
+
+    USER -->|Monitor & Investigate| DASHBOARD
+```
