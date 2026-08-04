@@ -31,6 +31,7 @@ This document covers the initial setup required to prepare the SOC server for de
 | Network Adapter | NAT |
 
 Install Ubuntu Server using the default installation options and create a non-root user.
+<img width="514" height="290" alt="image" src="https://github.com/user-attachments/assets/5d47e455-9dd2-4204-b686-2e52afb78273" />
 
 ---
 
