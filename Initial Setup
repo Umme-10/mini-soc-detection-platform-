@@ -1,0 +1,106 @@
+# Initial Setup
+
+This document covers the initial setup required to prepare the SOC server for deploying the Mini SOC Detection & Response Platform.
+
+---
+
+## Lab Environment
+
+| Component | Configuration |
+|----------|---------------|
+| Hypervisor | VMware Workstation |
+| Host OS | Windows 10 |
+| SOC Server | Ubuntu Server 24.04 LTS |
+| Attacker VM | Kali Linux |
+| Endpoint VM | Windows 10 |
+| Endpoint VM | Ubuntu Desktop |
+| RAM | 32 GB (Host) |
+| Network | NAT |
+
+---
+
+## Ubuntu Server Installation
+
+### VM Configuration
+
+| Resource | Value |
+|---------|-------|
+| CPU | 4 vCPUs |
+| Memory | 8 GB |
+| Storage | 20 GB |
+| Network Adapter | NAT |
+
+Install Ubuntu Server using the default installation options and create a non-root user.
+
+---
+
+## System Update
+
+Update the operating system.
+
+```bash
+sudo apt update
+sudo apt upgrade -y
+```
+
+---
+
+## Install Required Packages
+
+```bash
+sudo apt install curl wget git unzip net-tools tree -y
+```
+
+Verify the installation.
+
+```bash
+git --version
+curl --version
+```
+
+---
+
+## Install Docker
+
+Download and run the official Docker installation script.
+
+```bash
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+```
+
+Add the current user to the Docker group.
+
+```bash
+sudo usermod -aG docker <username>
+newgrp docker
+```
+
+---
+
+## Verify Docker Installation
+
+```bash
+docker --version
+docker compose version
+docker run hello-world
+```
+
+Expected result:
+
+- Docker Engine installed successfully.
+- Docker Compose available.
+- `hello-world` container executes successfully.
+
+---
+
+## Current Status
+
+-  Ubuntu Server installed
+-  System updated
+-  Required packages installed
+-  Docker Engine installed
+-  Docker Compose installed
+- Docker installation verified
+
+The server is now ready for deploying the Wazuh platform.
