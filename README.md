@@ -10,45 +10,6 @@ This project demonstrates practical SOC analyst skills including SIEM deployment
 
 # Architecture
 
-```mermaid
-flowchart LR
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/c9d2e4f9-b175-48ed-b3ca-2762d3a8e82e" />
 
-    subgraph Attacker["🛡️ Attack Simulation"]
-        KALI["💻 Kali Linux<br/>Atomic Red Team<br/>Manual Attack Simulation"]
-    end
-
-    subgraph Endpoints["🖥️ Monitored Endpoints"]
-        WIN["🪟 Windows 10<br/>Sysmon<br/>Wazuh Agent"]
-        LINUX["🐧 Ubuntu Desktop<br/>Auditd<br/>Wazuh Agent"]
-    end
-
-    subgraph SOC["🛡️ SOC Server (Ubuntu Server)"]
-        WAZUH["Wazuh Manager"]
-        INDEXER["Wazuh Indexer"]
-        DASHBOARD["Wazuh Dashboard"]
-    end
-
-    subgraph Detection["🔍 Detection Engineering"]
-        SIGMA["Sigma Rules"]
-        MITRE["MITRE ATT&CK Mapping"]
-    end
-
-    subgraph Analyst["👨‍💻 SOC Analyst"]
-        USER["Browser"]
-    end
-
-    KALI -->|Simulated Attacks| WIN
-    KALI -->|Simulated Attacks| LINUX
-
-    WIN -->|Security Events| WAZUH
-    LINUX -->|Security Events| WAZUH
-
-    SIGMA --> WAZUH
-
-    WAZUH --> INDEXER
-    INDEXER --> DASHBOARD
-
-    WAZUH --> MITRE
-
-    USER -->|Monitor & Investigate| DASHBOARD
-```
+   
