@@ -34,7 +34,39 @@ Install Ubuntu Server using the default installation options and create a non-ro
 <img width="514" height="290" alt="image" src="https://github.com/user-attachments/assets/5d47e455-9dd2-4204-b686-2e52afb78273" />
 
 ---
+## Enable Remote Access (SSH)
 
+Install the OpenSSH server (if not already installed).
+
+```bash
+sudo apt update
+sudo apt install openssh-server -y
+```
+Verify the SSH service is running.
+
+```bash
+sudo systemctl status ssh
+```
+
+Find the server IP address.
+
+```bash
+ip a
+```
+
+From the Windows host, connect to the Ubuntu Server using PowerShell or Windows Terminal.
+
+```powershell
+ssh <username>@<server-ip>
+```
+
+Example:
+
+```powershell
+ssh umme@192.168.5.232
+```
+
+Verify the connection by logging in successfully and accessing the Ubuntu Server terminal from the Windows host.
 ## System Update
 
 Update the operating system.
@@ -92,16 +124,7 @@ Expected result:
 - Docker Engine installed successfully.
 - Docker Compose available.
 - `hello-world` container executes successfully.
+<img width="587" height="386" alt="image" src="https://github.com/user-attachments/assets/5cef6401-c1a5-40a8-83a5-49d8a4f25859" />
 
 ---
 
-## Current Status
-
--  Ubuntu Server installed
--  System updated
--  Required packages installed
--  Docker Engine installed
--  Docker Compose installed
-- Docker installation verified
-
-The server is now ready for deploying the Wazuh platform.
