@@ -12,4 +12,20 @@ This project demonstrates practical SOC analyst skills including SIEM deployment
 
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/c9d2e4f9-b175-48ed-b3ca-2762d3a8e82e" />
 
-   
+# Technologies Used
+
+| Technology | Purpose |
+|------------|---------|
+| Ubuntu Server | Hosts the SOC platform |
+| Docker & Docker Compose | Deploy and manage Wazuh services |
+| Wazuh | SIEM/XDR platform for log collection, detection, and response |
+| Wazuh Indexer | Stores and indexes security events |
+| Wazuh Dashboard | Visualizes alerts and dashboards |
+| Windows 10 | Monitored endpoint |
+| Ubuntu Desktop | Monitored Linux endpoint |
+| Sysmon | Enhanced Windows event logging |
+| Auditd | Linux audit logging |
+| Sigma | Detection rules for threat detection |
+| MITRE ATT&CK | Maps detections to adversary techniques |
+| Kali Linux | Attack simulation environment |
+| Git & GitHub | Version control and project documentation |   
