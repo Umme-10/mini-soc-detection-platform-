@@ -128,3 +128,19 @@ Expected result:
 
 ---
 
+
+---
+
+## Wazuh Deployment
+
+Wazuh is deployed as a single-node environment using Docker Compose. The deployment includes the Wazuh Manager, Wazuh Indexer, and Wazuh Dashboard.
+
+### Clone Wazuh Docker Repository
+
+```bash
+cd ~
+git clone -b v4.14.6 https://github.com/wazuh/wazuh-docker.git
+cd wazuh-docker/single-node
+docker compose up -d
+docker compose ps
+
