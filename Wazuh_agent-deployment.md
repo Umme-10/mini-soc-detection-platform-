@@ -59,6 +59,7 @@ Verify the service:
 Get-Service WazuhSvc
 ```
 The service should show a Running status.
+<img width="840" height="386" alt="image" src="https://github.com/user-attachments/assets/43eb02d5-1b89-4543-a0d5-03b5bbd17c6a" />
 
 Agent Verification
 
@@ -67,5 +68,5 @@ Return to:
 Wazuh Dashboard → Agents
 
 The Windows10-Endpoint should appear with an Active status, confirming successful communication with the Wazuh Manager.
-<img width="840" height="386" alt="image" src="https://github.com/user-attachments/assets/43eb02d5-1b89-4543-a0d5-03b5bbd17c6a" />
+<img width="1625" height="745" alt="image" src="https://github.com/user-attachments/assets/1abeb824-3cfb-479e-8421-4b9fe2bcb168" />
 
