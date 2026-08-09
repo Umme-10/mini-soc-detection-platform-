@@ -141,13 +141,14 @@ Wazuh is deployed as a single-node environment using Docker Compose. The deploym
 cd ~
 git clone -b v4.14.6 https://github.com/wazuh/wazuh-docker.git
 cd wazuh-docker/single-node
-
+```
 ### Deployment Verification
 
 Verify that all Wazuh services are running:
 
 ```bash
 docker compose ps
+```
 
 <img width="1919" height="855" alt="image" src="https://github.com/user-attachments/assets/87c48607-ddfc-41ee-a2b4-ea01056a09fe" />
 
